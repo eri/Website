@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Primary Meta Tags -->
+    <title>{% block page_title %}Eray C.{% endblock %} - Eri.gg</title>
+
+    <meta name="title" content="Eri.gg"/>
+    <meta name="author" content="Eray C."/>
+    <meta name="description" content="{% block page_description %}Random French student learning some code, messing around with Python and writing some stories on Medium.{% endblock %}"/>
+    <meta name='theme-color' content='#e5e7eb'/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Eray C."/>
+    <meta property="og:title" content="Eri.gg"/>
+    <meta property="og:description" content="{{ self.page_description() }}"/>
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://cdn.discordapp.com/avatars/187316528100802560/a_ef087b54ed03e3cd1c1aada0ea6ade87.png"/>
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary"/>
+    <meta property="twitter:author" content="Eray C."/>
+    <meta property="twitter:title" content="Eri.gg"/>
+    <meta name="twitter:image:src" content="https://cdn.discordapp.com/avatars/187316528100802560/a_ef087b54ed03e3cd1c1aada0ea6ade87.png" />
+
+    <meta property="twitter:description" content="{{ self.page_description() }}">
+
+    <script src="https://unpkg.com/windicss-runtime-dom"></script>
+    <link href="{{ url_for('static', filename='css/tailwind.css') }}" rel="stylesheet">
+    <link rel="icon" href="https://cdn.discordapp.com/avatars/187316528100802560/a_ef087b54ed03e3cd1c1aada0ea6ade87.gif" type="image/x-icon"/>
+
+    {% block page_css %} {% endblock %}
+</head>
+
+{% block navbar %}
+<header class="text-gray-800 bg-gray-100 border-t-8 border-gray-700 border-opacity-20">
+    <div class="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center">
+      <a class="flex items-center mb-4 md:mb-0">
+        <span class="text-2xl font-semibold">Eri.</span>
+      </a>
+    </div>
+</header>
+{% endblock %}
+  
+<div class="bg-gray-100">{% block page_body %} {% endblock %}</div>
+
+{% block page_scripts %} {% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</html>
