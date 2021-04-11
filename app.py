@@ -1,4 +1,13 @@
-﻿from flask import Flask, render_template, send_from_directory, jsonify, redirect, request, session, make_response
+﻿from flask import (
+    Flask,
+    render_template,
+    send_from_directory,
+    jsonify,
+    redirect,
+    request,
+    session,
+    make_response,
+)
 
 import requests
 import datetime
@@ -8,82 +17,128 @@ import os
 
 # Set our Flask config
 config = {
-    "DEBUG": True,                  # Flask debugging
     "TEMPLATES_AUTO_RELOAD": True,  # Auto reload Flask
 }
 
 # Define the Flask Application
-app = Flask(__name__, static_url_path='/', static_folder='static')
+app = Flask(
+    __name__, static_url_path="/", static_folder="static", template_folder="templates"
+)
 app.config.from_mapping(config)
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    r = make_response(render_template("index.html", **{"posts":get_medium_posts(),"status":get_discord_status()}))
-    r.headers['Access-Control-Allow-Origin'] = '*'
+    r = make_response(
+        render_template(
+            "index.html",
+            **{
+                "discord": get_discord_status(),
+                "experiences": [
+                    {
+                        "name": "Discord Templates",
+                        "position": "Founder & Developer",
+                        "link": "https://discordtemplates.com?utm_source=eri.gg",
+                        "time": "Since June 2020",
+                    },
+                    {
+                        "name": "Top.gg",
+                        "position": "Website Moderator",
+                        "link": "https://top.gg?utm_source=eri.gg",
+                        "time": "June 2019 > April 2021",
+                    },
+                    {
+                        "name": "SARL Ayhan Restaurant",
+                        "position": "Website Developer",
+                        "link": None,
+                        "time": "July 2020 > August 2020",
+                    },
+                ],
+                "education": [
+                    {
+                        "name": "ESTIAM Paris",
+                        "description": "Computer Science School applied to Businesses",
+                        "link": "https://www.estiam.education/en/?utm_source=eri.gg",
+                        "time": "Since October 2019",
+                    },
+                    {
+                        "name": "HS Henri Sellier",
+                        "description": "Technological Bachelor",
+                        "link": "http://www.lycee-henri-sellier.fr/?utm_source=eri.gg",
+                        "time": "September 2017 > July 2019",
+                    },
+                ],
+                "technologies": [
+                    {"name": "Python", "color": "blue-500", "size": "full"},
+                    {"name": "Flask", "color": "gray-700", "size": "2/3"},
+                    {"name": "Django", "color": "green-700", "size": "1/4"},
+                    {"name": "Javascript", "color": "yellow-600", "size": "1/4"},
+                    {"name": "HTML5", "color": "red-700", "size": "1/2"},
+                    {"name": "PHP", "color": "indigo-500", "size": "1/6"},
+                    {"name": "MongoDB", "color": "green-900", "size": "2/4"},
+                    {"name": "Tailwind CSS", "color": "green-500", "size": "1/3"},
+                ],
+            },
+        )
+    )
+    r.headers["Access-Control-Allow-Origin"] = "*"
     return r
 
-@app.route('/blog/latest/')
-def latest_story():
-    r = requests.get("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@erionline&api_key=5dfjtvxknfp1qkqzocw2qbdns0es6x7keqrgrseb")
-    return redirect(r.json()['guid']+"?utm_source=eri.gg")
 
-@app.route('/api/presence/')
-def current_presence():
-    r = make_response(jsonify(get_discord_status()))
-    r.headers['Access-Control-Allow-Origin'] = '*'
-    return r
-
-@app.route('/discord')
+@app.route("/discord")
 def social_discord():
-    return redirect("https://discord.gg/wxsYD4dh9S?utm_source=eri.gg")
-@app.route('/twitter')
+    return redirect("https://discord.com/users/187316528100802560?utm_source=eri.gg")
+
+
+@app.route("/twitter")
 def social_twitter():
     return redirect("https://twitter.com/erionline?utm_source=eri.gg")
-@app.route('/github')
+
+
+@app.route("/github")
 def social_github():
     return redirect("https://github.com/eri?utm_source=eri.gg")
 
-def get_medium_posts():
-    posts = []
-    r = requests.get("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@erionline" +
-                    "&api_key=5dfjtvxknfp1qkqzocw2qbdns0es6x7keqrgrseb")
-    response = r.json()
 
-    for i in response['items']:
-        # Calculate the read time
-        words = len(i['description'].split(" "))
-        read_time, multiplicator = 0, 0
-        while words > multiplicator:
-            multiplicator += 250
-            read_time += 1
+@app.route("/linkedin")
+def social_linkedin():
+    return redirect("https://linkedin.com/in/erayc/?utm_source=eri.gg")
 
-        posts.append({
-                        "title": i['title'],
-                        "date": str(datetime.datetime.strptime(i['pubDate'], '%Y-%m-%d %H:%M:%S').strftime("%d/%m/%Y")),
-                        "days": str((datetime.datetime.now()-datetime.datetime.strptime(i['pubDate'], '%Y-%m-%d %H:%M:%S')).days) + " days" if not 0 else "a few hours",
-                        "link": str(i['guid']) + "?utm_source=eri.gg",
-                        "description": i['description'].split(">")[1].split("<")[0],
-                        "read_time": read_time,
-                        "tags": i['categories'][:2]
-                    })
-    return posts
 
 def get_discord_status():
     r = requests.get("https://api.lanyard.rest/v1/users/187316528100802560")
     i = r.json()
     try:
-        st = i['data']['discord_status']
-        color = "green" if st=="online" else "yellow" if st=="idle" else "red" if st=="dnd" else "gray"
-        
-        if i['data']['listening_to_spotify']:
-            pr_artist = i['data']['spotify']['artist'].split(";")[0].split(",")[0]
-            pr_song = i['data']['spotify']['song']
-            return {"success":True, "status":color, "artist":pr_artist,"song":pr_song}
+        st = i["data"]["discord_status"]
+        color = (
+            "green"
+            if st == "online"
+            else "yellow"
+            if st == "idle"
+            else "red"
+            if st == "dnd"
+            else "gray"
+        )
 
-        return {"success":True, "status":color}
+        if i["data"]["listening_to_spotify"]:
+            pr_artist = i["data"]["spotify"]["artist"].split(";")[0].split(",")[0]
+            pr_song = i["data"]["spotify"]["song"]
+            return {
+                "success": True,
+                "status": color,
+                "artist": pr_artist,
+                "song": pr_song,
+                "avatar": f"https://cdn.discordapp.com/avatars/187316528100802560/{i['data']['discord_user']['avatar']}.gif",
+            }
+
+        return {
+            "success": True,
+            "status": color,
+            "avatar": f"https://cdn.discordapp.com/avatars/187316528100802560/{i['data']['discord_user']['avatar']}.gif",
+        }
     except Exception:
-        return {"success":False}
+        return {"success": False}
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0", port="8000")
