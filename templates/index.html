@@ -50,7 +50,7 @@
       </div>
   
       <h1 class="text-xl font-semibold rounded-sm mt-4 mb-2">Using these technologies</h1>
-      <div class="w-4/5 flex flex-wrap text-sm font-medium px-2 py-1 my-auto border-gray-400 border-l-4 rounded-sm text-gray-100 cursor-default">
+      <div class="w-full sm:w-4/5 flex flex-wrap text-sm font-medium px-2 py-1 my-auto border-gray-400 border-l-4 rounded-sm text-gray-100 cursor-default">
         {% for t in technologies %}
         <span class="w-{{ t.size }} min-w-max m-0.5 px-4 py-0.5 bg-{{ t.color }} bg-opacity-90 hover:bg-opacity-100 rounded-sm"> {{ t.name }} </span>
         {% endfor %}
