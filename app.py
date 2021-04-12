@@ -84,20 +84,25 @@ def index():
     r.headers["Access-Control-Allow-Origin"] = "*"
     return r
 
+@app.route("/blog/")
+@app.route("/medium/")
+def social_medium():
+    return redirect("https://erionline.medium.com/?utm_source=eri.gg")
+
 
 @app.route("/discord")
 def social_discord():
-    return redirect("https://discord.com/users/187316528100802560?utm_source=eri.gg")
+    return redirect("https://discord.com/users/187316528100802560/?utm_source=eri.gg")
 
 
 @app.route("/twitter")
 def social_twitter():
-    return redirect("https://twitter.com/erionline?utm_source=eri.gg")
+    return redirect("https://twitter.com/erionline/?utm_source=eri.gg")
 
 
 @app.route("/github")
 def social_github():
-    return redirect("https://github.com/eri?utm_source=eri.gg")
+    return redirect("https://github.com/eri/?utm_source=eri.gg")
 
 
 @app.route("/linkedin")
