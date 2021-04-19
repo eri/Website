@@ -1,9 +1,9 @@
 ﻿{% extends "views/main.html" %}
 
 {% block page_body %}
-<div class="container mx-auto items-center flex md:flex-row flex-col text-gray-800 py-25 px-4">
+<div class="container mx-auto flex lg:flex-row flex-col text-gray-800 py-25 px-4">
 
-    <div id="left-profile" class="md:w-1/4 mx-auto">
+    <div id="left-profile" class="lg:w-1/4 md:w-2/3 md:mx-auto">
   
       <img class="rounded-xl" src="{{ discord.avatar }}">
       {% include "components/presence.html" %}
@@ -31,7 +31,7 @@
 
       <div class="flex flex-wrap -mx-1 overflow-hidden sm:-mx-2">
 
-        <div class="my-1 px-1 w-full md:w-7/12 overflow-hidden sm:my-2 sm:px-2">
+        <div class="my-1 px-1 w-full lg:w-7/12 overflow-hidden sm:my-2 sm:px-2">
           <h1 class="text-xl font-semibold mb-2">Bio</h1>
           <div class=" text-sm border-l-4 font-semibold rounded-t-sm px-2 py-1 border-gray-400">
             My name is Eray, I'm a 20 years old student living in France. My biggest goal is to learn and improve my current programmation skills during my 5 years of academic courses. I wish to find a job later as a web or application developer.
@@ -50,7 +50,7 @@
       </div>
   
       <h1 class="text-xl font-semibold rounded-sm mt-4 mb-2">Using these technologies</h1>
-      <div class="w-full sm:w-4/5 flex flex-wrap text-sm font-medium px-2 py-1 my-auto border-gray-400 border-l-4 rounded-sm text-gray-100 cursor-default">
+      <div class="w-full lg:w-4/5 flex flex-wrap text-sm font-medium px-2 py-1 my-auto border-gray-400 border-l-4 rounded-sm text-gray-100 cursor-default">
         {% for t in technologies %}
         <span class="w-{{ t.size }} min-w-max m-0.5 px-4 py-0.5 bg-{{ t.color }} bg-opacity-90 hover:bg-opacity-100 rounded-sm"> {{ t.name }} </span>
         {% endfor %}
