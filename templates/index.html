@@ -25,7 +25,7 @@
 
       <div class="flex my-3 space-x-1 overflow-hidden">
         {% for k,v in social.items() %}
-        <a id="{{ k }}" href="{{ v.link[:-1] if v.link.endswith('/') else v.link }}/?utm_source=eri.gg" class="my-1 px-1 text-gray-800">
+        <a id="{{ k }}" href="{{ v.url[:-1] if v.url.endswith('/') else v.url }}/?utm_source=eri.gg" class="my-1 px-1 text-gray-800">
             {% include "icons/{}.svg".format(k) %}
         </a>
         {% endfor %}

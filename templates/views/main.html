@@ -6,9 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <!-- Author: {% block page_author %} {{ main_metadata(author) }} {% endblock %} -->
-    <!-- Title: {% block page_title %} {{ main_metadata(title) }} {% endblock %} -->
-    <!-- Description: {% block page_desc %} {{ main_metadata(desc) }} {% endblock %} -->
+    <!-- Author: {% block page_author %} {{ main_metadata('author') }} {% endblock %} -->
+    <!-- Title: {% block page_title %} {{ main_metadata('title') }} {% endblock %} -->
+    <!-- Description: {% block page_desc %} {{ main_metadata('desc') }} {% endblock %} -->
     
     <!-- Primary Meta Tags -->
     <title> {{ self.page_title() }} - {{ self.page_author() }} </title>
@@ -22,18 +22,18 @@
     <meta property="og:site_name" content="{{ self.page_author() }}" />
     <meta property="og:title" content="{{ self.page_title() }}"/>
     <meta property="og:description" content="{{ self.page_desc() }}" />
-    <meta property="og:locale" content="{{ main_metadata(locale) }}" />
-    <meta property="og:image" content="{{ main_metadata(image) }}" />
+    <meta property="og:locale" content="{{ main_metadata('locale') }}" />
+    <meta property="og:image" content="{{ main_metadata('image') }}" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:author" content="{{ self.page_author() }}" />
     <meta property="twitter:title" content="{{ self.page_title() }}" />
     <meta property="twitter:description" content="{{ self.page_desc() }}" />
-    <meta name="twitter:image:src" content="{{ main_metadata(image) }}"/>
+    <meta name="twitter:image:src" content="{{ main_metadata('image') }}"/>
     
     <!-- Favicon -->
-    <link rel="icon" href="{{ main_metadata(favicon) }}" type="image/x-icon" />
+    <link rel="icon" href="{{ main_metadata('favicon') }}" type="image/x-icon" />
 
     {% block page_css %} {% endblock %}
   </head>
