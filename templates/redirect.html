@@ -1,0 +1,10 @@
+{% extends "views/main.html" %}
+
+{% block page_title %} {{ social.title }} {% endblock %}
+{% block page_desc %} {{ social.desc }} {% endblock %}
+
+{% block page_scripts %}
+<script type="text/javascript">
+    window.location.href = "{{ social.link }}";
+</script>
+{% endblock %}
