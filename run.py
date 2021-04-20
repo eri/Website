@@ -2,7 +2,7 @@
 from flask_frozen import Freezer
 
 # Import my Flask App
-import app
+from website import app
 
 freezer = Freezer(app)
 
