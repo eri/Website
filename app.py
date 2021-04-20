@@ -1,4 +1,4 @@
-﻿from flask import (
+from flask import (
     Flask,
     render_template,
     send_from_directory,
@@ -11,7 +11,6 @@
 
 import requests
 import datetime
-import pymongo
 import time
 import os
 
