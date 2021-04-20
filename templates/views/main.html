@@ -37,8 +37,10 @@
 
     {% block page_css %} {% endblock %}
   </head>
-
+  
+  {% block page_navbar %}
   {% include "components/navbar.html" %}
+  {% endblock %}
 
   <body>{% block page_body %} {% endblock %}</body>
 
