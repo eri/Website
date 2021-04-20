@@ -6,47 +6,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
+    <!-- Author: {% block page_author %} {{ main_metadata(author) }} {% endblock %} -->
+    <!-- Title: {% block page_title %} {{ main_metadata(title) }} {% endblock %} -->
+    <!-- Description: {% block page_desc %} {{ main_metadata(desc) }} {% endblock %} -->
+    
     <!-- Primary Meta Tags -->
-    <title>{% block page_title %}Eray C.{% endblock %} - Eri.gg</title>
-
-    <meta name="title" content="Eri.gg" />
-    <meta name="author" content="Eray C." />
-    <meta
-      name="description"
-      content="{% block page_description %}Random French student learning some code, messing around with Python and writing some stories on Medium.{% endblock %}"
-    />
+    <title> {{ self.page_title() }} - {{ self.page_author() }} </title>
+    <meta name="title" content="{{ self.page_title() }}" />
+    <meta name="author" content="{{ self.page_author() }}" />
+    <meta name="description" content="{{ self.page_desc() }}"/>
     <meta name="theme-color" content="#e5e7eb" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Eray C." />
-    <meta property="og:title" content="Eri.gg" />
-    <meta property="og:description" content="{{ self.page_description() }}" />
-    <meta property="og:locale" content="en_US" />
-    <meta
-      property="og:image"
-      content="https://media.discordapp.net/attachments/712969229506183198/831109920103465000/img_caching.png"
-    />
+    <meta property="og:site_name" content="{{ self.page_author() }}" />
+    <meta property="og:title" content="{{ self.page_title() }}"/>
+    <meta property="og:description" content="{{ self.page_desc() }}" />
+    <meta property="og:locale" content="{{ main_metadata(locale) }}" />
+    <meta property="og:image" content="{{ main_metadata(image) }}" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary" />
-    <meta property="twitter:author" content="Eray C." />
-    <meta property="twitter:title" content="Eri.gg" />
-    <meta
-      name="twitter:image:src"
-      content="https://media.discordapp.net/attachments/712969229506183198/831109920103465000/img_caching.png"
-    />
-
-    <meta
-      property="twitter:description"
-      content="{{ self.page_description() }}"
-    />
-
-    <link
-      rel="icon"
-      href="https://images-ext-2.discordapp.net/external/5Hi7Y5E0rvFTKpKPeGg6Uc1p1-itFQPf4AwEsjzcUqo/https/i.imgur.com/tGibRPY.png"
-      type="image/x-icon"
-    />
+    <meta property="twitter:author" content="{{ self.page_author() }}" />
+    <meta property="twitter:title" content="{{ self.page_title() }}" />
+    <meta property="twitter:description" content="{{ self.page_desc() }}" />
+    <meta name="twitter:image:src" content="{{ main_metadata(image) }}"/>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{{ main_metadata(favicon) }}" type="image/x-icon" />
 
     {% block page_css %} {% endblock %}
   </head>
