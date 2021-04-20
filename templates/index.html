@@ -10,20 +10,26 @@
 
       <div class="ml-0.5 my-1 mr-1 justify-center">
         {% include "icons/location.svg" %}
-        Paris, France
+        {{ me.location }}
       </div>
     
       <a id="email" href="mailto:eray@eri.gg" class="text-gray-800 ml-0.5 my-1 mr-1 no-underline">
         {% include "icons/mail.svg" %}
-        eray@eri.gg
+        {{ me.email }}
       </a>
     
       <div class="ml-0.5 my-1 mr-1">
         {% include "icons/education.svg" %}
-        ESTIAM Paris (Bac+2)
+        {{ me.school }}
       </div>
 
-      {% include "components/socials.html" %}
+      <div class="flex my-3 space-x-1 overflow-hidden">
+        {% for k,v in social.items() %}
+        <a id="{{ k }}" href="{{ v.link[:-1] if v.link.endswith('/') else v.link }}/?utm_source=eri.gg" class="my-1 px-1 text-gray-800">
+            {% include "icons/{}.svg".format(k) %}
+        </a>
+        {% endfor %}
+      </div>
   
     </div>
   
@@ -34,7 +40,7 @@
         <div class="my-1 px-1 w-full lg:w-7/12 overflow-hidden sm:my-2 sm:px-2">
           <h1 class="text-xl font-semibold mb-2">Bio</h1>
           <div class=" text-sm border-l-4 font-semibold rounded-t-sm px-2 py-1 border-gray-400">
-            My name is Eray, I'm a 20 years old student living in France. My biggest goal is to learn and improve my current programmation skills during my 5 years of academic courses. I wish to find a job later as a web or application developer.
+            {{ me.bio }}
           </div>
         </div>
       
