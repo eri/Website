@@ -1,3 +1,4 @@
+# Flask dependencies
 from flask import (
     Flask,
     render_template,
@@ -10,9 +11,13 @@ from flask import (
     abort,
 )
 
-# Project constants
-from . import constants
+# Freeze dependencies
+from flask_frozen import Freezer
 
+# Project constants
+from src import constants
+
+# Misc. dependencies
 import requests
 import datetime
 import time
@@ -29,17 +34,11 @@ app = Flask(
 )
 app.config.from_mapping(config)
 
+# Define the Freeze instance for SSR
+ssr = Freezer(app)
 
-@app.route("/<name>")
-def index(name):
-
-    # Social redirect
-    if name and name in constants.social_metadata:
-        return render_template(
-            "redirect.html", **{"social": constants.social_metadata[name]}
-        )
-    
-    # Index redirect
+@app.route("/")
+def index():
     return render_template(
         "index.html",
         **{
@@ -52,15 +51,12 @@ def index(name):
         },
     )
 
-# @app.route("/r/<name>/")
-# def social_redirect(name):
-#     if name in constants.social_metadata:
-#         return render_template(
-#             "redirect.html", **{"social": constants.social_metadata[name]}
-#         )
-#     else:
-#         abort(404)
-#         return render_template("index.html")
+@app.route("/r/<name>/")
+def social_redirect(name):
+    if name in constants.social_metadata:
+        return render_template(
+            "redirect.html", **{"social": constants.social_metadata[name]}
+        )
 
 def get_discord_status():
     r = requests.get(f"https://api.lanyard.rest/v1/users/{constants.discord_id}")
@@ -77,10 +73,10 @@ def get_discord_status():
 
 @app.context_processor
 def checkers():
-    def main_metadata(type):
-        return constants.main_metadata["type"]
+    def main_metadata(value):
+        return constants.main_metadata[value]
 
-    def social_metadata(name, type):
-        return constants.social_metadata["name"]["type"]
+    def social_metadata(name, value):
+        return constants.social_metadata[name][value]
 
     return dict(main_metadata=main_metadata, social_metadata=social_metadata)
