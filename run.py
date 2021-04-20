@@ -1,5 +1,5 @@
 # Import app & constants
-from src.website import app
+from src import website
 from src import constants
 
 # Import Frozen-Flask, a static site generator
@@ -16,7 +16,7 @@ if constants.ssr == True:
     Static files will be saved in a new /build directory
 
     """
-    freezer = Freezer(app)
+    freezer = Freezer(website.app)
 
     if __name__ == '__main__':
         # Run the initial Flask app
@@ -31,5 +31,5 @@ else:
 
     """
     if __name__ == '__main__':
-        app.run(debug=False, host=constants.host, port=constants.port)
+        website.app.run(debug=False, host=constants.host, port=constants.port)
     

@@ -1,5 +1,5 @@
 # Main constants
-ssr = False
+ssr = True
 host = "0.0.0.0"  # Used if ssr (Server Side Rendering) is False
 port = "8000"  # Used if ssr (Server Side Rendering) is False
 
