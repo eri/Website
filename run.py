@@ -1,5 +1,5 @@
 # Import app & constants
-from src import website
+import website
 from src import constants
 
 # Import Frozen-Flask, a static site generator
@@ -16,11 +16,14 @@ if constants.ssr == True:
     Static files will be saved in a new /build directory
 
     """
-    freezer = Freezer(website.app)
+    @website.ssr.register_generator
+    def social_redirect():
+        for social in constants.social_metadata:
+            yield {'name': social}
 
     if __name__ == '__main__':
         # Run the initial Flask app
-        freezer.freeze()
+        website.ssr.freeze()
 
 else:
     """
@@ -31,5 +34,5 @@ else:
 
     """
     if __name__ == '__main__':
-        website.app.run(debug=False, host=constants.host, port=constants.port)
+        website.app.run(debug=True, host=constants.host, port=constants.port)
     
