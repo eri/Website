@@ -34,5 +34,5 @@ else:
 
     """
     if __name__ == '__main__':
-        website.app.run(debug=True, host=constants.host, port=constants.port)
+        website.app.run(debug=False, host=constants.host, port=constants.port)
     
