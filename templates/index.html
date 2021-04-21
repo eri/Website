@@ -6,7 +6,23 @@
     <div id="left-profile" class="lg:w-1/4 md:w-2/3 md:mx-auto">
   
       <img class="rounded-xl" src="{{ discord.avatar }}">
-      {% include "components/presence.html" %}
+
+      <div class="mt-4 font-semibold text-3xl">
+        {{ me.name }}
+        <span
+          id="statusIcon"
+          class="w-2.5 h-2.5 rounded-full inline-flex animate-pulse bg-gray-400"
+        >
+        </span>
+      </div>
+      
+      <div id="listeningStatus" class="ml-0.5 mt-1.25 text-sm break-word hidden">
+        <span class="w-2 h-2 bg-red-500 rounded-full inline-flex animate-pulse">
+        </span>
+        <span id="listeningContent" class="ml-1"> <i>Fetching...</i> </span>
+      </div>
+      
+      <p class="ml-0.5 text-sm mt-1">{{ me.short_bio }}</p>
 
       <div class="ml-0.5 my-1 mr-1 justify-center">
         {% include "icons/location.svg" %}
