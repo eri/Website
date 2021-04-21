@@ -1,6 +1,7 @@
-tippy("#status-icon", {
+tippy("#statusIcon", {
+  allowHTML: true,
   content: "Loading...",
-  placement: "right",
+  placement: "right-end",
   arrow: false,
 });
 
