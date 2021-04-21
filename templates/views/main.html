@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-gray-100">
+<html id="page" class="dark">
   <head>
     <script src="https://unpkg.com/windicss-runtime-dom"></script>
 
@@ -42,8 +42,12 @@
   {% include "components/navbar.html" %}
   {% endblock %}
 
-  <body>{% block page_body %} {% endblock %}</body>
-
+  <body class="bg-gray-100 dark:bg-gray-800">{% block page_body %} {% endblock %}</body>
+  
+  {% block page_footer %}
+    {% include "components/footer.html" %}
+  {% endblock %}
+  
   {% block page_scripts %} {% endblock %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </html>
