@@ -38,8 +38,11 @@ function update_presence() {
         var song = `<b class='font-semibold'>${
           data["data"]["spotify"]["song"].split("(")[0]
         }</b>`;
-        // Update the text directly from the HTML
-        listeningContent.innerHTML = `Listening to ${song} by ${artist}`;
+
+        // Update the text directly from the HTML if changed
+        if (listeningContent.innerHTML.includes(song) == false) {
+          listeningContent.innerHTML = `Listening to ${song} by ${artist}`;
+        }
       } else {
         // Spotify session is not active (anymore)
         listening_off();
@@ -90,12 +93,17 @@ function update_status(status) {
 
 function listening_on() {
   // Make the listening mode appear if Spotify is active
-  listeningStatus.classList.replace("hidden", "block");
+  if (listeningStatus.classList.value.includes("hidden")) {
+    // Only appear if hidden
+    listeningStatus.classList.replace("hidden", "block");
+  }
 }
 
 function listening_off() {
   // Make the listening mode disappear if Spotify is inactive
-  listeningStatus.classList.replace("block", "hidden");
+  if (listeningStatus.classList.value.includes("block")) {
+    listeningStatus.classList.replace("block", "hidden");
+  }
 }
 
 function status_on() {
