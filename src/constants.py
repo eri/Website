@@ -11,6 +11,7 @@ me = {
     "email": "eray@eri.gg",
     "location": "Paris, France",
     "school": "ESTIAM Paris (Bac+2)",
+    "short_bio" : "French student messing around with Python.",
     "bio": "My name is Eray, I'm a 20 years old student living in France. My biggest goal is to learn and improve my current programmation skills during my 5 years of academic courses. I wish to find a job later as a web or application developer.",
 }
 
