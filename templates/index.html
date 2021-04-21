@@ -1,7 +1,7 @@
 ﻿{% extends "views/main.html" %}
 
 {% block page_body %}
-<div class="container mx-auto flex lg:items-center lg:flex-row flex-col text-gray-800 py-25 px-4">
+<div class="container mx-auto flex lg:items-center lg:flex-row flex-col text-gray-800 dark:text-gray-300 py-25 px-4">
 
     <div id="left-profile" class="lg:w-1/4 md:w-2/3 md:mx-auto">
   
@@ -19,7 +19,7 @@
       <div id="listeningStatus" class="ml-0.5 mt-1.25 text-sm break-word hidden">
         <span class="w-2 h-2 bg-red-500 rounded-full inline-flex animate-pulse">
         </span>
-        <span id="listeningContent" class="ml-1"> <i>Fetching...</i> </span>
+        <span id="listeningContent" class="ml-1"> Listening to <b>Spotify</b> </span>
       </div>
       
       <p class="ml-0.5 text-sm mt-1">{{ me.short_bio }}</p>
@@ -29,7 +29,7 @@
         {{ me.location }}
       </div>
     
-      <a id="email" href="mailto:eray@eri.gg" class="text-gray-800 ml-0.5 my-1 mr-1 no-underline">
+      <a id="email" href="mailto:eray@eri.gg" class="text-gray-800 dark:text-gray-300 ml-0.5 my-1 mr-1 no-underline">
         {% include "icons/mail.svg" %}
         {{ me.email }}
       </a>
@@ -41,7 +41,7 @@
 
       <div class="flex my-3 space-x-1 overflow-hidden">
         {% for k,v in social.items() %}
-        <a id="{{ k }}" href="{{ v.url[:-1] if v.url.endswith('/') else v.url }}/?utm_source=eri.gg" class="my-1 px-1 text-gray-800">
+        <a id="{{ k }}" href="{{ v.url[:-1] if v.url.endswith('/') else v.url }}/?utm_source=eri.gg" class="my-1 px-1 text-gray-800 dark:text-gray-200">
             {% include "icons/{}.svg".format(k) %}
         </a>
         {% endfor %}
@@ -62,7 +62,7 @@
       
         <div class="my-1 px-1 w-full lg:w-1/3 lg:ml-3 overflow-hidden sm:my-2 sm:px-2">
           <h1 class="text-xl font-semibold mb-2">Languages</h1>
-          <div class="text-gray-800 font-semibold space-x-6 inline-flex border-gray-400 border-l-4 rounded-sm pl-3">
+          <div class="font-semibold space-x-6 inline-flex border-gray-400 border-l-4 rounded-sm pl-3">
             <div id="french" class="py-0.5"> {% include "icons/flags/french.svg" %} French </div>
             <div id="english" class="py-0.5"> {% include "icons/flags/english.svg" %} English </div>
             <div id="turkish" class="py-0.5"> {% include "icons/flags/turkish.svg" %} Turkish </div>
@@ -83,8 +83,12 @@
       <div class="flex flex-wrap -mx-1 overflow-hidden sm:-mx-1">
         {% for e in experiences %}
         <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 lg:w-1/3 cursor-default">     
-          <div class="px-3.5 py-1.5 border-l-4 border-gray-400 rounded-sm bg-gray-200">
-            <a {% if e.link %} href="{{ e.link }}" target="_blank" {% endif %} class="text-base text-gray-800 font-semibold {% if e.link %} hover:underline {% endif %} no-underline"> {{ e.name }} </a>
+          <div class="px-3.5 py-1.5 border-l-4 border-gray-400 rounded-sm bg-gray-200 dark:bg-gray-700">
+            <a
+              {% if e.link %} href="{{ e.link }}" target="_blank" {% endif %}
+              class="text-base text-gray-800 dark:text-gray-200 font-semibold {% if e.link %} hover:underline {% endif %} no-underline">
+              {{ e.name }}
+            </a>
             <div class="text-sm font-normal"> {{ e.position }} </div>
             <div class="mt-1 text-sm font-semibold inline-flex">
               {% include "icons/time.svg" %}
@@ -100,8 +104,12 @@
       <div class="flex flex-wrap -mx-1 overflow-hidden sm:-mx-1">
         {% for e in education %}
         <div class="my-1 px-1 w-full overflow-hidden sm:my-1 sm:px-1 xl:w-2/5 lg:w-1/2 cursor-default">     
-          <div class="px-3.5 py-1.5 border-l-4 border-gray-400 rounded-sm bg-gray-200">
-            <a {% if e.link %} href="{{ e.link }}" target="_blank" {% endif %} class="text-base text-gray-800 font-semibold {% if e.link %} hover:underline {% endif %} no-underline"> {{ e.name }} </a>
+          <div class="px-3.5 py-1.5 border-l-4 border-gray-400 rounded-sm bg-gray-200 dark:bg-gray-700">
+            <a
+              {% if e.link %} href="{{ e.link }}" target="_blank" {% endif %}
+              class="text-base text-gray-800 dark:text-gray-200 font-semibold {% if e.link %} hover:underline {% endif %} no-underline">
+              {{ e.name }}
+            </a>
             <div class="text-sm font-normal"> {{ e.description }} </div>
             <div class="mt-1 text-sm font-semibold inline-flex">
               {% include "icons/time.svg" %}
@@ -119,6 +127,7 @@
 {% endblock %}
 
 {% block page_scripts %}
+<script src="{{ url_for('static', filename='js/theme.js') }}"></script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="{{ url_for('static', filename='js/tooltips.js') }}"></script>
