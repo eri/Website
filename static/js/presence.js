@@ -12,7 +12,7 @@ width="15" height="15" viewBox="0 0 24 24">
 
 // Update the presence every 20 seconds
 // Websockets support will be added later
-setInterval(update_presence, 20000);
+setInterval(update_presence, 10000);
 
 function update_presence() {
   const url = "https://api.lanyard.rest/v1/users/187316528100802560";
