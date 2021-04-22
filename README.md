@@ -7,7 +7,7 @@ Welcome to my personal website's repository. Made with Flask and WindiCSS (compi
 ![preview](https://i.imgur.com/5nmDIwB.png)
 
 ## Todo
-- [ ] Fix the responsiveness of small & medium breakpoints
+- [x] Fix the responsiveness of small & medium breakpoints
 - [ ] Add blog view for my Medium stories
-- [ ] Support for dark & white themes
+- [x] Support for dark & white themes
 - [ ] Localization support for French & Turkish by using [Flask Babel](https://flask-babel.tkte.ch/)
