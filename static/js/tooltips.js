@@ -5,6 +5,11 @@ tippy("#statusIcon", {
   arrow: false,
 });
 
+tippy("#themeButton", {
+  content: "Switch theme",
+  placement: "left",
+});
+
 tippy("#email", {
   content: "Click to email me",
   placement: "right",
