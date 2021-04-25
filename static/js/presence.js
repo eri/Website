@@ -3,7 +3,7 @@ var statusIcon = document.getElementById("statusIcon");
 var listeningStatus = document.getElementById("listeningStatus");
 var listeningContent = document.getElementById("listeningContent");
 
-// Initialize websocket session 
+// Initialize websocket session
 const lanyard = new WebSocket("wss://api.lanyard.rest/socket");
 
 var dscdata = {};
@@ -22,16 +22,15 @@ lanyard.onopen = function () {
 };
 
 // Send a heartbeat every 30 seconds
-if (received) {
-  setInterval(
+setInterval(() => {
+  if (received) {
     lanyard.send(
       JSON.stringify({
         op: 3,
       })
-    ),
-    30000
-  );
-}
+    );
+  }
+}, 30000);
 
 // Update once a new data is received
 lanyard.onmessage = function (event) {
@@ -39,7 +38,7 @@ lanyard.onmessage = function (event) {
   dscdata = JSON.parse(event.data);
 
   if (dscdata.t === "INIT_STATE" || dscdata.t === "PRESENCE_UPDATE") {
-    update_presence()
+    update_presence();
   }
 };
 
