@@ -16,13 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
 function themeEvent() {
     // Get the current theme and change it
 
-    console.log("themeEvent triggered")
     if (main.classList.value.includes("dark")) {
         changeTheme("light")
         storeTheme("light")
+        switcher._tippy.setContent(`Dark theme`);
     } else {
         changeTheme("dark")
         storeTheme("dark")
+        switcher._tippy.setContent(`Light theme`);
     }
 
     // Define a default theme if not set
