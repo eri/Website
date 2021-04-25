@@ -16,13 +16,13 @@
         </span>
       </div>
       
-      <div id="listeningStatus" class="ml-0.5 mt-1.25 text-sm break-word hidden">
+      <p class="ml-0.5 text-sm mt-1">{{ me.short_bio }}</p>
+
+      <div id="listeningStatus" class="ml-0.5 my-1.50 text-sm break-word hidden">
         <span class="w-2 h-2 bg-red-500 rounded-full inline-flex animate-pulse">
         </span>
         <span id="listeningContent" class="ml-1"> Listening to <b>Spotify</b> </span>
       </div>
-      
-      <p class="ml-0.5 text-sm mt-1">{{ me.short_bio }}</p>
 
       <div class="ml-0.5 my-1 mr-1 justify-center">
         {% include "icons/location.svg" %}
