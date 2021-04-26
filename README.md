@@ -33,12 +33,12 @@ You can view a public version of my site at [eri.gg](https://eri.gg).
 > **Note:** If you would like to get a static version of your site, keep `ssr` as `True`.
 > 
 > If you would like to run a Flask server, change `ssr` as `False`. In that case, you can set a host (IP) and a port where the website will be run. It's recommended to keep `host` as `0.0.0.0` if the address is pointing a local address (like `localhost` or `127.0.0.1`). You are free to change the `port` as you wish.
-4. Run the `py run.py` command on your terminal/shell
+4. Run the `py run.py` command on your terminal/shell to start the website
 5. If `ssr` in `constants.py` is **`False`**, a static version of the site has been generated in a new folder named `/build`.
 > You can host this static version on a web server.
 > 
 > I recommend you to deploy your site by using services like [Netlify](https://netlify.com) or [Vercel](https://vercel.com/) for FREE.
-7. If `ssr` is `constants.py` is **`True`**, your site will be available at the `host:port` that you specified. (https://localhost:8000/ by default)
+7. If `ssr` in `constants.py` is **`True`**, your site will be available at the `host:port` that you specified. (https://localhost:8000/ by default)
 
 ## 📸 Preview
 ![preview](https://i.imgur.com/v7Q9R6v.png)
