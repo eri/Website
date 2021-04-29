@@ -37,16 +37,18 @@
 
     {% block page_css %} {% endblock %}
   </head>
-  
-  {% block page_navbar %}
-  {% include "components/navbar.html" %}
-  {% endblock %}
 
-  <body class="bg-gray-100 dark:bg-gray-800">{% block page_body %} {% endblock %}</body>
-  
-  {% block page_footer %}
+  <body class="bg-gray-100 dark:bg-gray-800 block" hidden>
+    {% block page_navbar %}
+    {% include "components/navbar.html" %}
+    {% endblock %}
+
+    {% block page_body %} {% endblock %}
+
+    {% block page_footer %}
     {% include "components/footer.html" %}
-  {% endblock %}
+    {% endblock %}
+  </body>
   
   {% block page_scripts %} {% endblock %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
