@@ -54,6 +54,9 @@ def index():
 @app.route("/r/<name>/")
 def social_redirect(name):
     if name in constants.social_metadata:
+        social_data = constants.social_metadata[name]
+        social_data['title'] = str(name).capitalize()
+
         return render_template(
             "redirect.html", **{"social": constants.social_metadata[name]}
         )
@@ -71,7 +74,7 @@ def latest_story():
             "redirect.html", **{
                 "social": {
                     "author": "Eray C. - Medium",
-                    "name": "Biraz konuşalım... #1 - Nisan 2021",
+                    "title": "Biraz konuşalım... #1 - Nisan 2021",
                     "desc": "Günlük tutmak yerine aylık tutsak nasıl olur? Hayatımdan anlar, yazılara döküp, anlatmak istediğim konuların toplandığı bir alan oluşturmak…",
                     "color": "#c4c4c4",
                     "url": constants.redirections['story']
