@@ -15,6 +15,12 @@ me = {
     "bio": "My name is Eray, I'm a 20 years old student living in France. My biggest goal is to learn and improve my current programmation skills during my 5 years of academic courses. I wish to find a job later as a web or application developer.",
 }
 
+# Custom redirects
+redirections = {
+    "blog": "https://erionline.medium.com/?utm_source=eri.gg",
+    "story": "https://erionline.medium.com/biraz-konusalim-nisan-2021-b8bbc5d9bb08/?utm_source=eri.gg",
+}
+
 # Metadata
 main_metadata = {
     "locale": "en_US",
