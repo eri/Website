@@ -5,7 +5,7 @@
 
     <div id="left-profile" class="lg:w-1/4 md:w-2/3 md:mx-auto">
   
-      <img class="rounded-xl" src="{{ discord.avatar }}">
+      <img class="rounded-xl" src="{{url_for('static', filename='./assets/avatar.gif')}}">
 
       <div class="mt-4 font-semibold text-3xl">
         {{ me.name }}
