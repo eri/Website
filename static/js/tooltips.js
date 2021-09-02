@@ -41,6 +41,11 @@ tippy("#medium", {
   placement: "bottom",
 });
 
+tippy("#instagram", {
+  content: "@eray.eri",
+  placement: "bottom",
+});
+
 tippy("#french", {
   content: "French (native)",
   placement: "bottom",
