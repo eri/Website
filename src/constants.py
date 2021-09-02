@@ -8,11 +8,11 @@ discord_id = "187316528100802560"
 
 me = {
     "name": "Eray C.",
-    "email": "eray@eri.gg",
+    "email": "hi@eri.gg",
     "location": "Paris, France",
-    "school": "ESTIAM Paris (Bac+2)",
-    "short_bio" : "French student messing around with Python.",
-    "bio": "My name is Eray, I'm a 20 years old student living in France. My biggest goal is to learn and improve my current programmation skills during my 5 years of academic courses. I wish to find a job later as a web or application developer.",
+    "school": "ESTIAM Paris (Bac+3)",
+    "short_bio" : "French IT student from the internets.",
+    "bio": "My name is Eray, I'm a 20 years old student living in France. My biggest goal is to learn and improve my current programming skills during my 5 years of academic courses. I wish to find a job later as a web or application developer.",
 }
 
 # Custom redirects
@@ -40,6 +40,10 @@ social_metadata = {
         "desc": "Discover my work and projects from my GitHub profile.",
         "url": "https://github.com/eri",
     },
+    "instagram": {
+        "desc": "Take a look to my posts & stories from some parts of my life.",
+        "url": "https://www.instagram.com/eray.eri",
+    },
     "linkedin": {
         "desc": "Check out my LinkedIn profile to know more about my skills & experiences.",
         "url": "https://linkedin.com/in/erayc",
@@ -57,16 +61,22 @@ social_metadata = {
 # Main page - Experiences
 experiences = [
     {
-        "name": "Discord Templates",
-        "position": "Founder & Developer",
-        "link": "https://discordtemplates.com?utm_source=eri.gg",
-        "time": "Since June 2020",
+        "name": "Mendo SAS",
+        "position": "Fullstack Typescript Dev",
+        "link": None,
+        "time": "Since September 2021",
     },
     {
         "name": "Top.gg",
-        "position": "Website Moderator",
+        "position": "Community Moderator",
         "link": "https://top.gg?utm_source=eri.gg",
-        "time": "June 2019 > April 2021",
+        "time": "Since June 2019",
+    },
+    {
+        "name": "Discord Templates",
+        "position": "Founder & Developer",
+        "link": "https://discordtemplates.com?utm_source=eri.gg",
+        "time": "June 2020 > June 2021",
     },
     {
         "name": "SARL Ayhan Restaurant",
@@ -80,7 +90,7 @@ experiences = [
 education = [
     {
         "name": "ESTIAM Paris",
-        "description": "Computer Science School applied to Businesses",
+        "description": "Computer Science School for Businesses",
         "link": "https://www.estiam.education/en/?utm_source=eri.gg",
         "time": "Since October 2019",
     },
@@ -96,10 +106,11 @@ education = [
 technologies = [
     {"name": "Python", "color": "blue-500", "size": "full"},
     {"name": "Flask", "color": "gray-700", "size": "2/3"},
-    {"name": "Django", "color": "green-700", "size": "1/4"},
+    {"name": "Django", "color": "green-700", "size": "1/6"},
+    {"name": "PHP", "color": "indigo-500", "size": "1/10"},
     {"name": "Javascript", "color": "yellow-600", "size": "1/4"},
+    {"name": "Typescript", "color": "blue-700", "size": "1/6"},
     {"name": "HTML5", "color": "red-700", "size": "1/2"},
-    {"name": "PHP", "color": "indigo-500", "size": "1/6"},
     {"name": "MongoDB", "color": "green-900", "size": "2/4"},
     {"name": "Tailwind CSS", "color": "green-500", "size": "1/3"},
 ]
