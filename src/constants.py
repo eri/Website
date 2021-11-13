@@ -107,7 +107,7 @@ technologies = [
     {"name": "Python", "color": "blue-500", "size": "full"},
     {"name": "Flask", "color": "gray-700", "size": "2/3"},
     {"name": "Django", "color": "green-700", "size": "1/6"},
-    {"name": "React", "color": "blue-300", "size": "1/6"},
+    {"name": "React", "color": "blue-300", "size": "1/12"},
     {"name": "Javascript", "color": "yellow-600", "size": "1/4"},
     {"name": "Typescript", "color": "blue-700", "size": "1/6"},
     {"name": "HTML5", "color": "red-700", "size": "1/2"},
