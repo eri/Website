@@ -70,7 +70,7 @@ experiences = [
         "name": "Top.gg",
         "position": "Community Moderator",
         "link": "https://top.gg?utm_source=eri.gg",
-        "time": "Since June 2019",
+        "time": "June 2019 > September 2021",
     },
     {
         "name": "Discord Templates",
@@ -107,7 +107,7 @@ technologies = [
     {"name": "Python", "color": "blue-500", "size": "full"},
     {"name": "Flask", "color": "gray-700", "size": "2/3"},
     {"name": "Django", "color": "green-700", "size": "1/6"},
-    {"name": "PHP", "color": "indigo-500", "size": "1/10"},
+    {"name": "React", "color": "blue-300", "size": "1/6"},
     {"name": "Javascript", "color": "yellow-600", "size": "1/4"},
     {"name": "Typescript", "color": "blue-700", "size": "1/6"},
     {"name": "HTML5", "color": "red-700", "size": "1/2"},
