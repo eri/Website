@@ -1,4 +1,4 @@
-// Define some usefull variables
+// Define some useful variables
 const statusIcon = document.getElementById("statusIcon");
 const listeningStatus = document.getElementById("listeningStatus");
 const listeningContent = document.getElementById("listeningContent");
