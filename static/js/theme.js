@@ -1,9 +1,9 @@
 // HTML elements
-var main = document.getElementById("page")
-var switcher = document.getElementById("themeButton")
+let main = document.getElementById("page")
+let switcher = document.getElementById("themeButton")
 
 // Settings
-var storedTheme = localStorage.theme;
+let storedTheme = localStorage.theme;
 
 // Events
 switcher.addEventListener("click", themeEvent);
@@ -37,6 +37,7 @@ function storeTheme(theme) {
         localStorage.theme = theme;
         return true
     } catch (e) {
+        console.log(e)
         return false
     } 
 }
@@ -46,10 +47,8 @@ function changeTheme(theme) {
     if (theme == "dark") {
         // Enables the dark mode
         document.getElementById("page").classList.add("dark")
-    }
-
-    if (theme == "light") {
-        // Enables the dark mode
+    } else {
+        // Enables the light mode
         document.getElementById("page").classList.remove("dark")
     }
 }
