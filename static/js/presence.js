@@ -1,13 +1,13 @@
-﻿// Define some usefull variables
-var statusIcon = document.getElementById("statusIcon");
-var listeningStatus = document.getElementById("listeningStatus");
-var listeningContent = document.getElementById("listeningContent");
+// Define some usefull variables
+let statusIcon = document.getElementById("statusIcon");
+let listeningStatus = document.getElementById("listeningStatus");
+let listeningContent = document.getElementById("listeningContent");
 
 // Initialize websocket session
 const lanyard = new WebSocket("wss://api.lanyard.rest/socket");
 
-var dscdata = {};
-var received = false;
+let dscdata = {};
+let received = false;
 
 // Subscribe for Discord ID
 lanyard.onopen = function () {
