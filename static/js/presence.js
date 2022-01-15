@@ -1,16 +1,16 @@
-﻿// Define some usefull variables
-var statusIcon = document.getElementById("statusIcon");
-var listeningStatus = document.getElementById("listeningStatus");
-var listeningContent = document.getElementById("listeningContent");
+// Define some useful variables
+const statusIcon = document.getElementById("statusIcon");
+const listeningStatus = document.getElementById("listeningStatus");
+const listeningContent = document.getElementById("listeningContent");
 
 // Initialize websocket session
 const lanyard = new WebSocket("wss://api.lanyard.rest/socket");
 
-var dscdata = {};
-var received = false;
+let dscdata = {};
+let received = false;
 
 // Subscribe for Discord ID
-lanyard.onopen = function () {
+lanyard.onopen = () => {
   lanyard.send(
     JSON.stringify({
       op: 2,
@@ -33,7 +33,7 @@ setInterval(() => {
 }, 30000);
 
 // Update once a new data is received
-lanyard.onmessage = function (event) {
+lanyard.onmessage = (event) => {
   received = true;
   dscdata = JSON.parse(event.data);
 
@@ -42,7 +42,7 @@ lanyard.onmessage = function (event) {
   }
 };
 
-function update_presence() {
+const update_presence = () => {
   if (statusIcon != null) {
     // Update the status icon only if it exists
     status_on();
@@ -54,11 +54,11 @@ function update_presence() {
     listening_on();
 
     // Escape artist names including other artist names
-    var artist = `<b class='font-semibold'>${
+    const artist = `<b class='font-semibold'>${
       dscdata.d.spotify.artist.split(";")[0].split(",")[0]
     }</b>`;
     // Escape song names with uneeded information
-    var song = `<b class='font-semibold'>${
+    const song = `<b class='font-semibold'>${
       dscdata.d.spotify.song.split("(")[0]
     }</b>`;
 
@@ -72,9 +72,9 @@ function update_presence() {
   }
 }
 
-function update_status(status) {
-  var color = "";
-  var text = "";
+const update_status = (status) => {
+  let color = "";
+  let text = "";
 
   // Define the color and tippy text based of the status
   if (status == "online") {
@@ -92,7 +92,7 @@ function update_status(status) {
   }
 
   // Remove the loading animation if it's loading
-  var check_animation = statusIcon.classList[statusIcon.classList.length - 2];
+  const check_animation = statusIcon.classList[statusIcon.classList.length - 2];
   if (check_animation.includes("animate")) {
     statusIcon.classList.remove(
       statusIcon.classList[statusIcon.classList.length - 2]
@@ -107,7 +107,7 @@ function update_status(status) {
   statusIcon._tippy.setContent(text);
 }
 
-function listening_on() {
+const listening_on = () => {
   // Make the listening mode appear if Spotify is active
   if (listeningStatus.classList.value.includes("hidden")) {
     // Only appear if hidden
@@ -115,19 +115,19 @@ function listening_on() {
   }
 }
 
-function listening_off() {
+const listening_off = () => {
   // Make the listening mode disappear if Spotify is inactive
   if (listeningStatus.classList.value.includes("block")) {
     listeningStatus.classList.replace("block", "hidden");
   }
 }
 
-function status_on() {
+const status_on = () => {
   // Make the status appear with the Discord data
   statusIcon.classList.replace("hidden", "inline-flex");
 }
 
-function status_off() {
+const status_off = () => {
   // Hide the status appear if no Discord data received
   statusIcon.classList.replace("inline-flex", "hidden");
 }
