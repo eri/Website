@@ -1,19 +1,17 @@
 // HTML elements
-let main = document.getElementById("page")
-let switcher = document.getElementById("themeButton")
+const main = document.getElementById("page")
+const switcher = document.getElementById("themeButton")
 
 // Settings
-let storedTheme = localStorage.theme;
+const storedTheme = localStorage.theme;
 
 // Events
-switcher.addEventListener("click", themeEvent);
-document.addEventListener('DOMContentLoaded', function() {
-    if (storedTheme != null || storedTheme != undefined) {
-        changeTheme(storedTheme);
-    };
-}, false);
+switcher.onclick = themeEvent;
+document.onload = () => {
+    if (!storedTheme) changeTheme(storedTheme);
+};
 
-function themeEvent() {
+const themeEvent = () => {
     // Get the current theme and change it
 
     if (main.classList.value.includes("dark")) {
@@ -27,28 +25,24 @@ function themeEvent() {
     }
 
     // Define a default theme if not set
-    if (storedTheme == null || storedTheme == undefined) {
-        storeTheme("dark")
-    }
+    if (!storedTheme) storeTheme("dark");
+    
 }
 
-function storeTheme(theme) {
+const storeTheme = (theme) => {
     try {
         localStorage.theme = theme;
         return true
     } catch (e) {
-        console.log(e)
+        console.error(e)
         return false
     } 
 }
 
-function changeTheme(theme) {
-
-    if (theme == "dark") {
-        // Enables the dark mode
-        document.getElementById("page").classList.add("dark")
-    } else {
-        // Enables the light mode
-        document.getElementById("page").classList.remove("dark")
-    }
+const changeTheme (theme) => {
+    // Enables the dark mode 
+    if (theme == "dark") document.getElementById("page").classList.add("dark")
+    
+    // Enables the light mode
+    else document.getElementById("page").classList.remove("dark")
 }
