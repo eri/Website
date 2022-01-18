@@ -39,7 +39,7 @@ const storeTheme = (theme) => {
     } 
 }
 
-const changeTheme (theme) => {
+const changeTheme = (theme) => {
     // Enables the dark mode 
     if (theme == "dark") document.getElementById("page").classList.add("dark")
     
