@@ -6,7 +6,7 @@ const switcher = document.getElementById("themeButton")
 const storedTheme = localStorage.theme;
 
 // Events
-switcher.onclick = themeEvent;
+switcher.onclick = themeEvent();
 document.onload = () => {
     if (!storedTheme) changeTheme(storedTheme);
 };
