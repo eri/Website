@@ -20,20 +20,21 @@
 You can view a public version of my site at [eri.gg](https://eri.gg).
 
 ## 📚 Dependencies and requirements
-- [**Python v3.5 or higher**](https://www.python.org/downloads/) (dependencies may break with older versions)
+- [**Python v3.5 - v3.8**](https://www.python.org/downloads/) (dependencies may break with older versions)
+  - ⚠️ WARNING: Versions newer than Python 3.8 will get an encounter a known "ImmutableMapping" deprecation bug that will prevent you from starting the app. Ref [here](https://github.com/tensorflow/tensorboard/issues/5478). See this GitHub issue for workarounds.
 - [**Flask 1.0.2 or higher**](https://flask.palletsprojects.com/en/1.1.x/installation/) (backend of the site)
 - [**Frozen_Flask 0.15**](https://pythonhosted.org/Frozen-Flask/#installation) (to render a static version of the site)
 - [**Requests 2.23.0**](https://docs.python-requests.org/en/master/user/install/) (for server-side API requests)
 
 
 ## ⚙️ Installation
-1. Open a terminal/shell and clone this repository with `git clone https://github.com/eri/Website.git`
-2. Install dependencies with the `pip install -r requirements.txt` command
+1. Open a terminal/shell and clone this repository with `git clone https://github.com/eri/Website.git` and then do `cd Website`
+2. Install dependencies with the `pip3 install -r requirements.txt` command
 3. Go to the `/src` folder and edit the `constants.py` file with your own settings
 > **Note:** If you would like to get a static version of your site, keep `ssr` as `True`.
 > 
 > If you would like to run a Flask server, change `ssr` as `False`. In that case, you can set a host (IP) and a port where the website will be run. It's recommended to keep `host` as `0.0.0.0` if the address is pointing a local address (like `localhost` or `127.0.0.1`). You are free to change the `port` as you wish.
-4. Run the `py run.py` command on your terminal/shell to start the website
+4. Run the `python3 run.py` command on your terminal/shell to start the website
 5. If `ssr` in `constants.py` is **`False`**, a static version of the site has been generated in a new folder named `/build`.
 > You can host this static version on a web server.
 > 
