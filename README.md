@@ -21,7 +21,7 @@ You can view a public version of my site at [eri.gg](https://eri.gg).
 
 ## 📚 Dependencies and requirements
 - [**Python v3.5 - v3.8**](https://www.python.org/downloads/) (dependencies may break with older versions)
-  - ⚠️ WARNING: Versions newer than Python 3.8 will get an encounter a known "ImmutableMapping" deprecation bug that will prevent you from starting the app. Ref [here](https://github.com/tensorflow/tensorboard/issues/5478). See this GitHub issue for workarounds.
+  - ⚠️ WARNING: Versions newer than Python 3.8 will get a known "ImmutableMapping" deprecation bug that will prevent you from starting the app. Ref [here](https://github.com/tensorflow/tensorboard/issues/5478). See this GitHub issue for workarounds.
 - [**Flask 1.0.2 or higher**](https://flask.palletsprojects.com/en/1.1.x/installation/) (backend of the site)
 - [**Frozen_Flask 0.15**](https://pythonhosted.org/Frozen-Flask/#installation) (to render a static version of the site)
 - [**Requests 2.23.0**](https://docs.python-requests.org/en/master/user/install/) (for server-side API requests)
