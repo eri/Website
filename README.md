@@ -7,6 +7,10 @@
 </p>
 <p align="center">Welcome to my personal website's repository. Made with Python Flask and WindiCSS (compiler for TailwindCSS).</p>
 
+### 🚧 Deprecated
+> As of May 2022, this website is using stacks and technologies that are considered as "old" and has many bugs around that aren't worth to fix at this time. I'm working on a new version with a new design under React but I cannot provide any ETA of a release for now.
+
+Follow me on [Twitter](https://twitter.com/erionline) for updates!
 
 ## ✨ Features
 * **WindiCSS support.** WindiCSS is a compiler for TailwindCSS which comes with additional features and faster load times.
