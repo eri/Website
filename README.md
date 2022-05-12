@@ -11,10 +11,10 @@
 <p align="center">Welcome to my personal website's repository. Made with Python Flask and WindiCSS.</p>
 
 ## 🔄&nbsp; Update — May 2022
-- Fixed a dependencies bug with `jinja` & specific Python versions that was preventing the app to start
+- Fixed dependencies bugs with `jinja` & specific Python versions preventing the app to start
 - Fixed the broken dark / white theme switcher ([#6](https://github.com/eri/Website/pull/6))
 - Added a complete guide to deploy to Netlify on this README
-- Global rewrite of the README with assets changes
+- Global rewrite of this README with structure and design changes
 
 ## ✨&nbsp; Features
 * **WindiCSS support.** WindiCSS is a new frontend framework using classes for styles providing faster load times.
