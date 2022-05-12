@@ -12,6 +12,7 @@
 
 ## 🔄&nbsp; Update — May 2022
 - Fixed a dependencies bug with `jinja` & specific Python versions that was preventing the app to start
+- Fixed the broken dark / white theme switcher ([#6](https://github.com/eri/Website/pull/6))
 - Added a complete guide to deploy to Netlify on this README
 - Global rewrite of the README with assets changes
 
