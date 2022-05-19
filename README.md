@@ -15,6 +15,7 @@
 - Fixed the broken dark / white theme switcher ([#6](https://github.com/eri/Website/pull/6))
 - Added a complete guide to deploy to Netlify on this README
 - Global rewrite of this README with structure and design changes
+- This version will be deprecated in favor of a new version made with React & TailwindCSS.
 
 ## ✨&nbsp; Features
 * **WindiCSS support.** WindiCSS is a new frontend framework using classes for styles providing faster load times.
@@ -53,7 +54,7 @@ Go to your `Team settings` > `Your site` > `Builds` and then, click on `Retry de
 ![CleanShot Pro - 13-05-2022 at 00 50 58](https://user-images.githubusercontent.com/38740024/168180344-96fd49e0-b67e-47e3-993f-6c09c15fc6af.png)
 
 ### 5. Your site is live &nbsp;✨
-Check on your domain associated on your website to see your website rendered! 
+Check out your domain associated to your website to see your website rendered! 
 
 Edit the `constants.py` file under the `/src` folder to customize it and push to your GitHub repository. Netlify will automatically deploy and update your site.
 
