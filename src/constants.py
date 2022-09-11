@@ -10,9 +10,9 @@ me = {
     "name": "Eray C.",
     "email": "hi@eri.gg",
     "location": "Paris, France",
-    "school": "ESTIAM Paris (Bac+3)",
+    "school": "ESTIAM Paris (Bac+4)",
     "short_bio" : "French IT student from the internets.",
-    "bio": "My name is Eray, I'm a 20 years old student living in France. My biggest goal is to learn and improve my current programming skills during my 5 years of academic courses. I wish to find a job later as a web or application developer.",
+    "bio": "Hey there, my name is Eray, 21 years old student living in France. Currently proudly working on a job and trying to be graduated at the same time. Doing the best for my familly and friends because they're the only precious thing I have.",
 }
 
 # Custom redirects
@@ -64,7 +64,7 @@ experiences = [
         "name": "Mendo SAS",
         "position": "Fullstack Typescript Dev",
         "link": None,
-        "time": "Since September 2021",
+        "time": "September 2021 > Today",
     },
     {
         "name": "Top.gg",
