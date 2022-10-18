@@ -18,7 +18,7 @@ me = {
 # Custom redirects
 redirections = {
     "blog": "https://erionline.medium.com/?utm_source=eri.gg",
-    "story": "https://erionline.medium.com/biraz-konusalim-nisan-2021-b8bbc5d9bb08/?utm_source=eri.gg",
+    "story": "https://erionline.medium.com/anlamiyorum-fa89540f674e/?utm_source=eri.gg",
 }
 
 # Metadata
