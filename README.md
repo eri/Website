@@ -26,7 +26,7 @@
 * **Discord presence support.** Live display your Spotify activity on your website directly.
 
 ## 🔎&nbsp; Live version
-You can view a public version of my site at [eri.gg](https://eri.gg).
+You can view a public version of my site at [eri.dev](https://eri.dev).
 
 ## 📚&nbsp; Dependencies and requirements
 - [**Python v3.5 - v3.8**](https://www.python.org/downloads/) (dependencies may break with other versions)
