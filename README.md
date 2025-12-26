@@ -10,6 +10,9 @@
 </p>
 <p align="center">Welcome to my personal website's repository. Made with Python Flask and WindiCSS.</p>
 
+> [!IMPORTANT]  
+> This repository stores my personal website's old version and is no longer maintained. Please see [eri.dev](https://eri.dev)'s repository on [eri/dev](https://github.com/eri/dev) for the latest and up to date version. 
+
 ## 🔄&nbsp; Update — May 2022
 - Fixed dependencies bugs with `jinja` & specific Python versions preventing the app to start
 - Fixed the broken dark / white theme switcher ([#6](https://github.com/eri/Website/pull/6))
